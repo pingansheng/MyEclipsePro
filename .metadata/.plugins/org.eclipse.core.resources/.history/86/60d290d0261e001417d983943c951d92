@@ -1,0 +1,10 @@
+package com.pas.ELM.jblas;
+
+public class JblasTest {
+	public static void main(String[] args) {
+		double[][] a={{1,2},{3,4},{5,6},{7,8}};
+		Matrix ht=new Matrix(a);
+		Matrix mp=m.getMPMatrix(ht);
+		displayMatrix(mp);
+	}
+}

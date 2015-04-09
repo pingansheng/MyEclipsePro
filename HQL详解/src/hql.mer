@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="MySql" database="hql" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="course">
+      <Drawing expanded="true" location="319,263" dimensions="206,106" />
+      <Columns>
+        <Column name="cid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="cname" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="ccredit" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="studcourse">
+      <Drawing expanded="true" location="167,0" dimensions="196,129" />
+      <Columns>
+        <Column name="stuCourseId" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="sid" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="cid" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="grade" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="student">
+      <Drawing expanded="true" location="0,229" dimensions="219,175" />
+      <Columns>
+        <Column name="sid" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="sname" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="45" />
+        </Column>
+        <Column name="ssex" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="CHAR" size="2" />
+        </Column>
+        <Column name="sdept" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="sage" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="saddress" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="45" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="studcourse_ibfk_1">
+      <Details primary_table="student" foreign_table="studcourse">
+        <PrimaryKeys>
+          <ColumnName name="sid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="sid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="studcourse_ibfk_2">
+      <Details primary_table="course" foreign_table="studcourse">
+        <PrimaryKeys>
+          <ColumnName name="cid" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="cid" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

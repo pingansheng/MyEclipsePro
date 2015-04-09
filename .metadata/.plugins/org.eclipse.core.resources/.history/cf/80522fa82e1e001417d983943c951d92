@@ -1,0 +1,19 @@
+package com.pas.ELM.jblas;
+
+import org.jblas.DoubleMatrix;
+import org.jblas.Singular;
+
+public class JblasTest {
+	public static void main(String[] args) {
+		double[][] a={{1,2},{3,4},{5,6},{7,8}};
+		double[][] b={{1,2},{3,4}};
+		DoubleMatrix m=new DoubleMatrix(a);
+		DoubleMatrix n=new DoubleMatrix(b);
+		DoubleMatrix k=m.mmul(n);
+//		System.out.println(m.data.length);
+		DoubleMatrix[] svd=Singular.fullSVD(m);
+		System.out.println(svd[0]);
+		System.out.println(svd[1]);//数组 一行
+		System.out.println(svd[2]);
+	}
+}

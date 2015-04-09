@@ -1,0 +1,48 @@
+﻿
+/*类选择器*/
+.xinwen1 {
+    font-weight:bold;
+    font-size:20px;
+    background-color:pink;
+}
+/*ID选择器*/
+#xinwen2 {
+    font-weight:bolder;
+    font-size:25px;
+    color:black;
+    background-color:green;
+}
+/*html选择器*/
+/*ID>类选择器>html*/
+body {
+}
+a:link{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:underline;
+
+}
+a:visited
+{   
+    color:red;
+}
+
+/*通配符选择器*/
+* {
+    /*外边距*/
+    margin:0px; /*四个值 上 右 下 左  */
+                            /*三个值 上 （右左） 下*/
+    padding:0;/*内边距*/
+}
+
+/*父子选择器*/
+#style2{
+    font-size:20px;
+    color:black;
+}
+/*父子选择器*/
+#style2 span{
+    font-style:italic;
+    color:red;
+}

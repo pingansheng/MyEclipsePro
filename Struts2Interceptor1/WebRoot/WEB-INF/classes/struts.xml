@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<!-- 命名空间决定访问路径/ac/xxx.action -->
+	<package name="struts2" extends="struts-default" namespace="/ac">
+		<!-- 拦截器定义 -->
+		<interceptors>
+			<interceptor name="my_itcp" class="com.pas.interceptor.MyInterceptor">
+				<param name="hello">world</param>
+			</interceptor>
+
+			<interceptor name="my_itcp2" class="com.pas.interceptor.MyInter2"></interceptor>
+
+			<!-- 方法拦截器 需指定拦截谁 不拦截谁 -->
+			<interceptor name="my_methodITCP" class="com.pas.interceptor.MyMethodITCP"></interceptor>
+
+
+			<!-- 拦截器栈 -->
+			<!-- 进入时 先配置的先执行 回来时 先配置的后执行 类似栈和进入多门房间 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="my_itcp2"></interceptor-ref>
+				<interceptor-ref name="my_itcp"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 默认拦截器 应用到所有action去 -->
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<action name="test" class="com.pas.action.TestAction">
+			<!-- 配置拦截器至action -->
+			<!-- 如果手动配置拦截器 则struts-default（包括自定义的默认拦截器，如myStack）拦截器不加载 必须手动再添加 -->
+			<!--<interceptor-ref name="my_itcp"> -->
+			<!-- 会覆盖默认值 -->
+			<!--<param name="hello">welcome</param> -->
+			<!--</interceptor-ref> -->
+
+			<!-- 使用拦截器栈方式加载拦截器集合 -->
+			<!-- <interceptor-ref name="myStack"></interceptor-ref> -->
+
+
+		</action>
+		<action name="abc" class="com.pas.action.TestAction" method="abc">
+			<interceptor-ref name="my_methodITCP">
+			<!-- include优先级高 -->
+				<param name="includeMethods">abc</param>
+				<param name="excludeMethods">abc</param>
+			</interceptor-ref>
+			<interceptor-ref name="myStack"></interceptor-ref>
+		</action>
+	</package>
+</struts>

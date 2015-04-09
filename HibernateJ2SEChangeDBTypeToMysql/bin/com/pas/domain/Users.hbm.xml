@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 需要dtd -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pas.domain">
+	<!-- 懒加载可取消 -->
+	<class lazy="true" name="Users" table="users">
+		<!-- id用于指定主键属性 -->
+		<!-- <id name="id" column="id" type="java.lang.Integer"> -->
+		<!-- 用于指定主键值生成策略 hilo native increment sequence -->
+		<!-- seq只Oracle支持 mysql不支持 -->
+		<!-- <generator class="sequence"> -->
+		<!-- <param name="sequence">USERS_SEQ</param> -->
+		<!-- </generator> -->
+		<!-- </id> -->
+		<id name="id" column="id" type="java.lang.String">
+			<!-- 用于指定主键值生成策略 hilo native increment sequence etc -->
+			<!-- seq只Oracle支持 mysql不支持 -->
+			<!-- assigned表示手动指定 -->
+			<generator class="uuid">
+			</generator>
+		</id>
+		<!-- 配置其他属性 -->
+		<property name="username" type="java.lang.String">
+			<column name="username" not-null="false"></column>
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="passwd" not-null="false"></column>
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email" not-null="false"></column>
+		</property>
+		<property name="grade" type="java.lang.Integer">
+			<column name="grade" not-null="true"></column>
+		</property>
+	</class>
+
+</hibernate-mapping>

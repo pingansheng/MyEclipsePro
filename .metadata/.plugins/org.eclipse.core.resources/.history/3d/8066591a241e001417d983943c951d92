@@ -1,0 +1,38 @@
+package com.pas.ELMTest;
+
+import org.jblas.DoubleMatrix;
+
+import Jama.Matrix;
+
+
+public class main {
+
+	public static void main(String[] args) {
+//		try {
+//			MyELM m=new MyELM(8000, "sig",4, 1, 19);
+//			m.trainModel("file/train.txt");
+//			System.out.println("训练结束，耗时"+m.getTrainingTime()+"Sec");
+//			System.out.println("MSE="+m.getTrainingAccuracy());
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		DoubleMatrix ma=new DoubleMatrix(2, 2);
+		System.out.println(ma);
+//		MyELM m=new MyELM();
+//		double[][] a={{1,2},{3,4},{5,6},{7,8}};
+//		Matrix ht=new Matrix(a);
+//		Matrix mp=m.getMPMatrix(ht);
+//		displayMatrix(mp);
+	}
+	
+	public static void displayMatrix(Matrix m){
+		for (int i = 0; i < m.getRowDimension(); i++) {
+			for (int j = 0; j < m.getColumnDimension(); j++) {
+				System.out.print(m.get(i, j)+" ");
+			}
+			System.out.println();
+		}
+	}
+}

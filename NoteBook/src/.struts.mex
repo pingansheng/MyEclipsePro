@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="struts2" location="10,10" size="309,533">
+    <action name="login" location="134,81" size="150,104">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="index.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="index.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="index.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="route" namespace="/" />
+      </result>
+    </action>
+    <action name="route" location="110,301" size="150,125">
+      <result name="toMsgList">
+        <resourceEdge source="toMsgList" routing="0" target="msglist.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="index.jsp" />
+      </result>
+      <result name="none">
+        <resourceEdge source="none" routing="0" target="404.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="index.jsp" />
+      </result>
+      <result name="postMsg">
+        <resourceEdge source="postMsg" routing="0" target="postMsg.jsp" />
+      </result>
+    </action>
+    <action name="postMsg" location="118,449" size="150,40">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="msglist.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="index.jsp" path="/index.jsp" location="647,44" size="150,55" />
+  <webResource name="404.jsp" path="/WEB-INF/404.jsp" location="350,200" size="150,55" />
+  <webResource name="msglist.jsp" path="/WEB-INF/msglist.jsp" location="649,297" size="150,55" />
+  <webResource name="postMsg.jsp" path="/WEB-INF/postMsg.jsp" location="662,410" size="150,55" />
+</Struts2Diagram>
+

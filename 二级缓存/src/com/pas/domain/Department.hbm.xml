@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.pas.domain">
+	<class name="Department">
+		<!-- Hibernate只会缓存对象的简单属性的值, 要缓存集合属性,必须在集合元素中也加入
+		<cache>子元素 而Hibernate仅仅是把与当前持久对象关联的对象的OID存放到缓存中。 
+			如果希望把整个关联的对象的所有数据都存入缓存, 则要在相应关联的对象的映射文件中配置<cache>元素 -->
+		<!-- <cache usage="read-write" /> -->
+		<id name="id" type="java.lang.Integer">
+			<generator class="increment" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name" length="64" not-null="true" />
+		</property>
+		<!-- 配置一对多 -->
+		<set name="stus" cascade="all">
+			<!-- 配置外键 -->
+			<key column="dept_id"></key>
+			<one-to-many class="com.pas.domain.Student" />
+		</set>
+	</class>
+</hibernate-mapping>

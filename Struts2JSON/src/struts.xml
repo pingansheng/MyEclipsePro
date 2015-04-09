@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="struts2" extends="json-default">
+		<action name="getJSONinfo" class="com.pas.action.JSONAction">
+			<result name="success" type="json">
+			<!-- 不序列化属性列表 -->
+				<!-- <param name="excludeProperties">add</param> -->
+				<!-- 从该对象开始序列化 -->
+				<!-- <param name="root">person</param>
+				 -->
+				 <!-- 忽略继承 序列化根对象的父类字段 -->
+				 <param name="ignoreHierarchy">false</param>
+				 <!-- 排除null属性 -->
+				 <param name="excludeNullProperties">true</param>
+			</result>
+		</action>
+		
+		<action name="getGSONInfo" class="com.pas.action.GetGsonAction"></action>
+	</package>
+</struts>

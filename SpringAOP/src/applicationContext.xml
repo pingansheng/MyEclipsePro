@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- AOP配置流程
+		 1、配置被代理对象 
+		 2、前置通知
+		 3、代理对象 -->
+	
+	<!-- 被代理对象 -->
+	<bean id="testservice1" class="com.pas.service.TestService1">
+		<property name="name" value="ping" />
+	</bean>
+	<bean id="testservice2" class="com.pas.service.TestService2">
+		<property name="name" value="ping" />
+	</bean>
+	<!-- 前置通知 -->
+	<bean id="beforeadvice" class="com.pas.notify.BeforeAdvice" />
+	<!-- 后置通知 -->
+	<bean id="afteradvice" class="com.pas.notify.AfterAdvice" />
+	<!-- 环绕通知 -->
+	<bean id="aroundadvice" class="com.pas.notify.AroundAdvice"/>
+	<!-- 异常通知 -->
+	<bean id="throwadvice" class="com.pas.notify.ThrowsAdvice"/>
+	
+	<!-- 引入通知 过滤通知中的某些切入点 -->
+	<bean id="myBeforeAdviceFilter" class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+		<!-- 针对的通知bean -->
+		<property name="advice" ref="beforeadvice"/>
+		<property name="mappedNames">
+		<!-- 只对以下方法名织入 -->
+			<list>
+			<!-- 名称也可以使用正则过滤 -->
+				<value>sayHello</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 代理对象 -->
+	<bean id="myproxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		
+		<!-- 代理接口集 -->
+		<property name="proxyInterfaces">
+			<list>
+				<value>com.pas.inter.TestServiceInter</value>
+				<value>com.pas.inter.TestServiceInter2</value>
+			</list>
+		</property>
+
+	<!-- 织入通知到代理对象 -->
+	<property name="interceptorNames">
+		<list>
+			<!-- 此处引用的是自定义的连接点过滤器id -->
+			<value>myBeforeAdviceFilter</value>
+			<value>afteradvice</value>
+			<value>aroundadvice</value>
+			<value>throwadvice</value>
+		</list>
+	</property>
+
+	<!-- 配置被代理对象 -->
+	<property name="target">
+		<!-- 通知只对被代理对象有效 -->
+		<ref bean="testservice1" />
+	</property>
+	</bean>
+</beans>

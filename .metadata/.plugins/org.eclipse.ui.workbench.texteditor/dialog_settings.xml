@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="325" key="DIALOG_WIDTH"/>
+		<item value="301" key="DIALOG_Y_ORIGIN"/>
+		<item value="442" key="DIALOG_HEIGHT"/>
+		<item value="801" key="DIALOG_X_ORIGIN"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="printInfo" key="selection"/>
+		<list key="findhistory">
+			<item value="System.out.println"/>
+			<item value="train"/>
+			<item value="mmuli"/>
+			<item value="DenseMatrix"/>
+			<item value="zero"/>
+			<item value="getV"/>
+			<item value="  "/>
+			<item value="array"/>
+		</list>
+		<list key="replacehistory">
+			<item value="printInfo"/>
+			<item value="Matrix"/>
+			<item value="com.matrix"/>
+			<item value="currentPage."/>
+			<item value="survey"/>
+		</list>
+	</section>
+</section>

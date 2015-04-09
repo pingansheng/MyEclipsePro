@@ -1,0 +1,32 @@
+package com.pas.ELMTest;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.pas.ELM.jblas.MyELM;
+
+/**
+ * Unit test for simple App.
+ */
+public class AppTest {
+	@Test
+	public void testApp() {
+		double mse = 10;
+		int numOfNeur=0;
+		for (int i = 4; i < 100000; i += 50) {
+			try {
+				MyELM m = new MyELM(i, "sig", 4, 1, 19);
+				m.trainModel("file/train.txt");
+				System.out.println("训练MSE=" + m.getTrainingAccuracy());
+				if (mse > m.getTrainingAccuracy()) {
+					mse = m.getTrainingAccuracy();
+					numOfNeur=i;
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println("结束：最小MSE="+mse+"，神经元数量="+numOfNeur);
+	}
+}

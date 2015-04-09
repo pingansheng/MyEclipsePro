@@ -1,0 +1,32 @@
+package com.pas.matrixutil;
+
+import Jama.Matrix;
+import Jama.SingularValueDecomposition;
+
+public class MySVD extends SingularValueDecomposition {
+
+	public MySVD(Matrix Arg) {
+		super(Arg);
+	}
+
+	@Override
+	public Matrix getS() {
+		int n = this.getV().getRowDimension();
+		double s[] = this.getSingularValues();
+		int sn=s.length;
+		Matrix X = new Matrix(n, n);
+		double[][] S = X.getArray();
+		
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				S[i][j] = 0.0;
+			}
+			if (i < sn) {
+				S[i][i] = s[i];
+			} else {
+				S[i][i] = 0;
+			}
+		}
+		return X;
+	}
+}

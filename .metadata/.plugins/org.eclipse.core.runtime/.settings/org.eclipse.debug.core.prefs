@@ -1,0 +1,3 @@
+#Thu Aug 07 19:16:38 CST 2014
+prefWatchExpressions=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<watchExpressions>\r\n<expression enabled\="true" text\="postedParameters\=\=null"/>\r\n<expression enabled\="true" text\="asd"/>\r\n<expression enabled\="true" text\="i +2"/>\r\n<expression enabled\="true" text\="1.0f/(1+Math.exp(-tmp))"/>\r\n<expression enabled\="true" text\="Math.exp(-tmp)"/>\r\n</watchExpressions>\r\n
+eclipse.preferences.version=1

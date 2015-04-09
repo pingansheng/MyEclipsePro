@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.pas.domain.Message">
+		<!-- 主键属性 -->
+		<id name="msgid" type="java.lang.Integer">
+			<generator class="increment" />
+		</id>
+		<!-- 普通属性 -->
+		<property name="msgbody" length="2000" type="java.lang.String" />
+		<property name="msgtime" type="java.util.Date" />
+		<many-to-one name="sender" column="sender_id" />
+		<many-to-one name="receiver" column="receiver_id" />
+	</class>
+</hibernate-mapping>

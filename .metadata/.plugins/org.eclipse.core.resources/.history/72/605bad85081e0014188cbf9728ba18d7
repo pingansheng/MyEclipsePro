@@ -1,0 +1,13 @@
+package com.pas.matrixutil;
+
+import Jama.Matrix;
+import Jama.SingularValueDecomposition;
+
+public class MySVD extends SingularValueDecomposition{
+
+	public MySVD(Matrix Arg) {
+		super(Arg);
+		// TODO Auto-generated constructor stub
+	}
+
+}

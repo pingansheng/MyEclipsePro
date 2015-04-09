@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<bean id="dept" class="com.pas.collection.Department">
+		<property name="name" value="财务部" />
+		<property name="empname">
+			<!-- 给数组或list注值 -->
+			<list value-type="java.lang.String">
+				<value>小马</value>
+				<value>小王</value>
+				<value>小李</value>
+			</list>
+		</property>
+
+		<property name="emps">
+			<!-- list赋值 -->
+			<list value-type="com.pas.collection.Employee">
+				<ref bean="emp1" />
+				<ref bean="emp2" />
+			</list>
+		</property>
+
+		<property name="empsSet">
+			<!-- set赋值 -->
+			<set value-type="com.pas.collection.Employee">
+				<ref bean="emp2" />
+				<ref bean="emp1" />
+			</set>
+		</property>
+		<property name="empMaps">
+			<!-- Map赋值 -->
+			<map>
+				<entry key="1" value-ref="emp1" />
+				<entry key="2" value-ref="emp2" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="emp1" class="com.pas.collection.Employee">
+		<property name="name" value="北京" />
+	</bean>
+	<bean id="emp2" class="com.pas.collection.Employee">
+		<property name="name" value="天津" />
+	</bean>
+
+	<!-- 继承配置 -->
+	<!-- 配置一个学生对象 -->
+	<bean id="student" class="com.pas.inherit.Student">
+		<property name="name" value="顺平" />
+		<property name="age" value="30" />
+	</bean>
+	<!-- 配置graduate对象 -->
+	<bean id="graduate" parent="student" class="com.pas.inherit.Graduate">
+		<!-- 如果自己配置属性name,age,则会替换从父对象继承的数据 -->
+		<property name="name" value="小明" />
+		<property name="degree" value="学士" />
+	</bean>
+
+</beans>

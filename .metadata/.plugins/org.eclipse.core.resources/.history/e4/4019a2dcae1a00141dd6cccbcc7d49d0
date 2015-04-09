@@ -1,0 +1,17 @@
+package com.exception;
+
+public class ExceptionTest {
+
+	static void fun() {
+		throw new RuntimeException("´íÎó");
+	}
+
+	static void g() {
+		System.out.println("hahahhaha ");
+	}
+
+	public static void main(String[] args) {
+		fun();
+		g();
+	}
+}

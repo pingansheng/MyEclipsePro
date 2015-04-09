@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts2" extends="struts-default">
+		<action name="login" class="com.pas.action.LoginAction">
+		<!-- 有验证必须验证指定为input -->
+			<result name="input">/loginTag.jsp</result>
+			<result name="success">/res.jsp</result>
+			<result name="err">/loginTag.jsp</result>
+		</action>
+	</package>
+</struts>

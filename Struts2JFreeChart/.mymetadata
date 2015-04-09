@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Struts2JFreeChart"
+  id="myeclipse.1385865239413"
+  context-root="/Struts2JFreeChart"
+  j2ee-spec="5.0"
+  archive="Struts2JFreeChart.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

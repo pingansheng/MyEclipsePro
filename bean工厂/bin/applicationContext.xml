@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+	<!-- bean元素 当Spring框架加载时候 实例化这些bean加载入内存 -->
+	<bean id="userService" class="com.pas.service.UserService">
+		<!-- setName("pingansheng")体现出注入 -->
+		<property name="name">
+			<value>pingansheng</value>
+		</property>
+		<!-- 在UserService对象中 引用配置的另外一个bean -->
+		<property name="byeService" ref="byeService"/>
+	</bean>
+	<!-- scope="prototype"为原型模式，每次获取都创建新对象 -->
+	<bean id="byeService" scope="prototype" class="com.pas.service.ByeService">
+		<property name="name">
+			<value>pingansheng</value>
+		</property>
+	</bean>
+</beans>

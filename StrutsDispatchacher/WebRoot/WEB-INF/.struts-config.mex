@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/loginandlogout.do" location="105,90" dimension="322,84" />
+  <StrutsActivity path="/WEB-INF/login.jsp" location="45,270" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/Welcome.jsp" location="360,270" dimension="150,100" />
+  <StrutsTransition id="/WEB-INF/login.jsp,null,/loginandlogout.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="120,270" />
+      <AbsolutePoint location="120,174" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/loginandlogout.do,loginok,/WEB-INF/Welcome.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="412,174" />
+      <AbsolutePoint location="412,270" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

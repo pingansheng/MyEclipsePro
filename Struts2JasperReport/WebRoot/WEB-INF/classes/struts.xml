@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts2" extends="jasperreports-default">
+
+		<!-- Jfreechart插件 -->
+		<action name="viewReport" class="com.pas.action.ViewReport">
+			<result name="success" type="jasper">
+				<param name="location">test.jasper</param>
+				<param name="dataSource">cats</param>
+				<param name="format">XLS</param>
+			</result>
+		</action>
+
+	</package>
+		<package name="px" namespace="/images" extends="struts-default">
+			<action name="px">
+				<result>/images/px.gif</result>
+			</action>
+		</package>
+</struts>

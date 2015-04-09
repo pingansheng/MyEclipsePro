@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Struts2Anotation"
+  id="myeclipse.1382430095886"
+  context-root="/Struts2Anotation"
+  j2ee-spec="5.0"
+  archive="Struts2Anotation.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

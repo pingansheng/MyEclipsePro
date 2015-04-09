@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts2" extends="jfreechart-default">
+
+
+		<global-results>
+			<result name="err">/err.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<!-- 返回时 先回到调用的Action赵result 找不到则去global中找 -->
+			<exception-mapping result="err"
+				exception="com.pas.exception.PasswordException"></exception-mapping>
+		</global-exception-mappings>
+
+
+
+		<action name="login" class="com.pas.action.LoginAction">
+			<!-- 有验证必须验证指定为input -->
+			<result name="input">/log.jsp</result>
+			<result name="success">/res.jsp</result>
+			<result name="err">/err.jsp</result>
+			<!-- 声明异常 -->
+			<exception-mapping result="err"
+				exception="com.pas.exception.UserNameException"></exception-mapping>
+			<!-- 找不到去globalexception中找 -->
+		</action>
+
+		<action name="chart" class="com.pas.action.ChartAction">
+			<!-- 有验证必须验证指定为input -->
+			<result name="success">/chart/jfreechart.jsp</result>
+		</action>
+		
+		<!-- Jfreechart插件 -->
+		<action name="viewResult" class="com.pas.action.ViewResultAction">
+			<result name="success" type="chart">
+				<param name="width">600</param>
+				<param name="height">450</param>
+			</result>
+		</action>
+	</package>
+</struts>

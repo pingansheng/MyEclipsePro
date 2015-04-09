@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="userform" type="com.pas.forms.UserForm"></form-bean>
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action path="/login" name="userform" type="com.pas.actions.LoginAction">
+			<forward name="ok" path="/WEB-INF/ok.jsp"></forward>
+			<forward name="err" path="/WEB-INF/err.jsp"></forward>	
+		</action>
+	</action-mappings>
+	<message-resources parameter="com.pas.struts.ApplicationResources" />
+</struts-config>
+

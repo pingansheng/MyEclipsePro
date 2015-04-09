@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="struts2" location="10,25" size="280,321">
+    <action name="login" location="17,25" size="150,114">
+      <result name="input">
+        <resourceEdge source="input" routing="0" target="index.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="index.jsp" />
+      </result>
+      <result name="error">
+        <resourceEdge source="error" routing="0" target="index.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="MainFrame.jsp" />
+      </result>
+    </action>
+    <action name="employee" location="17,195" size="150,81">
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="addemployee.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="login.jsp" path="/WEB-INF\login.jsp" location="567,115" size="150,55" />
+  <webResource name="index.jsp" path="/index.jsp" location="574,29" size="150,55" />
+  <webResource name="MainFrame.jsp" path="/WEB-INF/MainFrame.jsp" location="570,193" size="150,55" />
+  <webResource name="addemployee.jsp" path="/WEB-INF/addemployee.jsp" location="541,294" size="150,55" />
+</Struts2Diagram>
+

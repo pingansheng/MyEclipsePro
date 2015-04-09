@@ -1,0 +1,9 @@
+ENDORSED_DIRS="D\:\\developTools\\CommonDEV\\apache-tomcat-7.0.53/common/endorsed"
+JDK_HOME=D\:\\developTools\\Java\\jdk1.7.0_55
+LIBRARY_PATH="D\:\\developTools\\Java\\jdk1.7.0_55\\bin;D\:\\developTools\\CommonDEV\\apache-tomcat-7.0.53\\bin"
+OPT_VM_ARGS=-XX\:PermSize\=128M -XX\:MaxPermSize\=256M\r\n-Xms128M -Xmx256M
+SERVER_ENABLEMENT=true
+TOMCAT_BASE=D\:\\developTools\\CommonDEV\\apache-tomcat-7.0.53
+TOMCAT_HOME=D\:\\developTools\\CommonDEV\\apache-tomcat-7.0.53
+TOMCAT_TEMP=D\:\\developTools\\CommonDEV\\apache-tomcat-7.0.53\\temp
+eclipse.preferences.version=1

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/login.do" location="255,15" dimension="316,84" />
+  <StrutsActivity path="/route.do" location="15,345" dimension="316,91" />
+  <StrutsActivity path="/userCTL.do" location="390,240" dimension="328,84" />
+  <StrutsActivity path="/WEB-INF/login.jsp" location="-30,15" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/AddUser.jsp" location="495,135" dimension="150,61" />
+  <StrutsActivity path="/WEB-INF/mainFrame.jsp" location="-30,135" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/ManageUsers.jsp" location="585,450" dimension="150,100" />
+  <StrutsActivity path="/WEB-INF/err.jsp" location="810,300" dimension="136,48" />
+  <StrutsActivity path="/WEB-INF/ok.jsp" location="810,240" dimension="130,48" />
+  <StrutsActivity path="/WEB-INF/UpdateUser.jsp" location="375,450" dimension="150,100" />
+  <StrutsTransition id="/login.do,loginOK,/route.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="270,99" />
+      <AbsolutePoint location="270,345" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/route.do,main,/WEB-INF/mainFrame.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="45,345" />
+      <AbsolutePoint location="45,235" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userCTL.do,err,/WEB-INF/err.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="718,309" />
+      <AbsolutePoint location="810,309" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userCTL.do,showusers,/WEB-INF/ManageUsers.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="660,324" />
+      <AbsolutePoint location="660,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/UpdateUser.jsp,null,/userCTL.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="480,450" />
+      <AbsolutePoint location="480,324" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,loginerr,/WEB-INF/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="255,35" />
+      <AbsolutePoint location="120,35" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/route.do,manageuser,/userCTL.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="331,390" />
+      <AbsolutePoint location="554,390" />
+      <AbsolutePoint location="554,324" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userCTL.do,ok,/WEB-INF/ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="718,264" />
+      <AbsolutePoint location="810,264" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userCTL.do,updateuser,/WEB-INF/UpdateUser.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="450,324" />
+      <AbsolutePoint location="450,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/route.do,adduser,/WEB-INF/AddUser.jsp,1" routingType="1">
+    <Bendpoints>
+      <Point rDim1="142,-195" rDim2="-255,30" />
+    </Bendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/login.jsp,null,/login.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="120,65" />
+      <AbsolutePoint location="255,65" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/route.do,/,/WEB-INF/login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="143,345" />
+      <AbsolutePoint location="143,95" />
+      <AbsolutePoint location="120,95" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/WEB-INF/AddUser.jsp,null,/userCTL.do,0" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="554,196" />
+      <AbsolutePoint location="554,240" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

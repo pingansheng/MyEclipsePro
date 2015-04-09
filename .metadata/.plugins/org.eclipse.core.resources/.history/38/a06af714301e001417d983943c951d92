@@ -1,0 +1,386 @@
+package com.pas.ELMTest;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+import com.pas.util.MySVD;
+
+
+import Jama.Matrix;
+import Jama.SingularValueDecomposition;
+
+public class MyELM {
+
+	/**
+	 * 训练相关
+	 */
+	// 训练集
+	private Matrix train_set;
+	// 训练集数据量
+	private int train_data_Count;
+	// 训练集输入
+	private Matrix P;
+	// 训练集输出
+	private Matrix T;
+	// 输入权重
+	private Matrix InputWeight;
+	// 训练时间
+	private float TrainingTime;
+	// 测试时间
+	private float TestingTime;
+	// 训练精度
+	private double TrainingAccuracy;
+	// 隐含层神经元数量
+	private int NumberofHiddenNeurons;
+	// 输出层神经元数量
+	private int NumberofOutputNeurons;
+	// 输入层神经元数量
+	private int NumberofInputNeurons;
+	//总列数
+	private int totalColCount;
+	// 激活函数类型字符串，暂时有sig
+	private String func="sig";
+	
+	// 隐含层神经元的阈值
+	private Matrix BiasofHiddenNeurons;
+	
+	// 输出层权重矩阵
+	private Matrix OutputWeight;
+
+	/**
+	 * 测试相关
+	 */
+	// 测试精度
+	private double TestingAccuracy;
+	// 测试集数据量
+	private int test_data_Count;
+	// 测试集合
+	private Matrix test_set;
+	// 测试集输入
+	private Matrix testP;
+	// 测试集输出
+	private Matrix testT;
+
+	public MyELM(){
+		
+	}
+	/**
+	 * 
+	 * @param numOfHiddenNeurons 隐含层神经元个数
+	 * @param ActivationFunction 激活函数类型，暂时选择"sig"
+	 * @param numOfInputNeurons 输入神经元个数
+	 * @param numOfOutPutNeurons 输出神经元个数
+	 * @param countOfTrainSet 训练集数据量
+	 */
+	public MyELM(int numOfHiddenNeurons,String ActivationFunction,int numOfInputNeurons,int numOfOutPutNeurons,int countOfTrainSet){
+		NumberofHiddenNeurons=numOfHiddenNeurons;
+		func=ActivationFunction;
+		NumberofInputNeurons=numOfInputNeurons;
+		NumberofOutputNeurons = numOfOutPutNeurons;
+		train_data_Count=countOfTrainSet;
+		totalColCount=NumberofInputNeurons+NumberofOutputNeurons;
+		//初始化其他变量
+		TrainingTime = 0;
+		TestingTime = 0;
+		TrainingAccuracy = 0;
+		TestingAccuracy = 0;
+		
+	}
+	
+	/**
+	 * 文件载入矩阵
+	 */
+	private Matrix loadMatrix(String trainSetPath,int rowNum,int colNum) throws IOException {
+		BufferedReader br=new BufferedReader(new FileReader(new File(trainSetPath)));
+		//第一行为文件信息
+		Matrix matrix=new Matrix(rowNum, colNum);
+		String lineStr="";
+		for(int i=0;i<rowNum;i++){
+			lineStr=br.readLine();
+			String[] strings=lineStr.split(" ");
+			for (int j = 0; j < colNum; j++) {
+				matrix.set(i, j, Double.parseDouble(strings[j]));
+			}
+		}
+		return matrix;
+	}
+	
+	/**
+	 * 训练模型
+	 * @param trainSetPath
+	 */
+	public void trainModel(String trainSetPath){
+		try {
+			//行数为数据量，列数为输入层加隐含层
+			train_set=loadMatrix(trainSetPath,train_data_Count,totalColCount);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		train();
+	}
+
+	/**
+	 * 训练模型
+	 */
+	private void train() {
+		//输入矩阵初始化 横向即每列为一组输入
+		/*
+		 *    4 8 …… N
+		 *    
+		 *    1 5 …… N
+		 *    2 6 …… N
+		 *    3 7 …… N
+		 */
+		P=new Matrix(NumberofInputNeurons, train_data_Count);
+		//测试机输出矩阵 横向
+		T=new Matrix(NumberofOutputNeurons, train_data_Count);
+		//初始化
+		for(int i=0;i<train_data_Count;i++){
+			
+			for(int j=0;j<totalColCount;j++)
+			{
+				if(j<NumberofInputNeurons){
+					//输入部分
+					P.set(j, i, train_set.get(i, j));
+				}else{
+					T.set(j-NumberofInputNeurons, i, train_set.get(i, j));
+				}
+			}
+		}
+		//end 初始化
+		long start_time_train = System.currentTimeMillis();
+		//随机初始化输入权值矩阵
+		//行数为隐含层神经元个数，列数为输入层神经元
+		/**
+		 *    W11 W12 W13(第一个隐含神经元对应各输入的权值)
+		 *    W21 W22 W23(第二个隐含神经元对应各输入的权值)
+		 *    ………………………………(第N个隐含神经元对应各输入的权值)
+		 */
+		InputWeight=Matrix.random(NumberofHiddenNeurons, NumberofInputNeurons);
+		
+		//初始化阈值
+		BiasofHiddenNeurons=Matrix.random(NumberofHiddenNeurons, 1);
+		
+		Matrix tmpH=new Matrix(NumberofHiddenNeurons, train_data_Count);
+		tmpH=InputWeight.times(P);
+		
+		//加阈值
+		//注意横向问题
+		for (int i = 0; i < NumberofHiddenNeurons; i++) {
+			for (int j = 0; j < train_data_Count; j++) {
+				tmpH.set(i, j, tmpH.get(i, j)+BiasofHiddenNeurons.get(i, 0));
+			}
+		}
+		
+		//输出矩阵
+		Matrix H=new Matrix(NumberofHiddenNeurons, train_data_Count);
+		
+		if(func.startsWith("sig")){
+			for (int i = 0; i < NumberofHiddenNeurons; i++) {
+				for (int j = 0; j < train_data_Count; j++) {
+					double tmp=tmpH.get(i, j);
+					tmp=1.0f/(1+Math.exp(-tmp));
+					H.set(i, j, tmp);
+				}
+			}
+		}
+		else{
+			throw new IllegalArgumentException("不支持的激活函数类型");
+		}
+		
+		//将H转置
+		Matrix Ht=H.transpose();
+		
+		//求广义逆
+		Matrix Ht_MP=getMPMatrix(Ht);
+		
+		//隐含层输出权重矩阵= Ht_MP * Tt
+		OutputWeight=Ht_MP.times(T.transpose());
+		
+		long end_time_train = System.currentTimeMillis();
+		TrainingTime = (end_time_train - start_time_train) * 1.0f / 1000;
+		
+		//测试误差
+		Matrix Yt = new Matrix(train_data_Count, NumberofOutputNeurons);
+		Yt=Ht.times(OutputWeight);
+		double MSE = 0;
+		for (int i = 0; i < train_data_Count; i++) {
+			System.out.println("理论值"+T.get(0,i)+" 预测值"+Yt.get(i, 0));
+			MSE += (Yt.get(i, 0) - T.get(0,i))
+					* (Yt.get(i, 0) - T.get(0,i));
+		}
+		TrainingAccuracy = Math.sqrt(MSE / train_data_Count);
+	}
+
+	/**
+	 * 求广义逆矩阵
+	 * @param ht
+	 * @return
+	 */
+	public Matrix getMPMatrix(Matrix ht) {
+		
+		
+		int m=ht.getRowDimension();
+		int n=ht.getColumnDimension();
+		
+		MySVD svd=new MySVD(ht);
+		Matrix U=svd.getU();
+		double[] s=svd.getSingularValues();//奇异值
+		double[] s_final=new double[Math.min(m, n)];
+		for(int i=0;i<s_final.length;i++){
+			s_final[i]=s[i];
+		}
+		Matrix Vt=svd.getV().transpose();//n*n
+		int sn=s_final.length;
+		for (int i = 0; i < sn; i++) {
+			s[i] = Math.sqrt(s[i]);
+		}
+		
+		//构造m*sn sn*n矩阵
+		Matrix S1 = new Matrix(m, sn);
+		Matrix S2 = new Matrix(sn, n);
+		for (int i = 0; i < sn; i++) {
+			S1.set(i, i, s[i]);
+			S2.set(i, i, s[i]);
+		}
+		Matrix C=U.times(S1);
+		Matrix D=S2.times(Vt);
+		
+		Matrix DT = D.transpose();
+		Matrix DD = D.times(DT);
+		Matrix invDD = DD.inverse();
+		
+		Matrix DDD = DT.times(invDD);
+		
+		Matrix CT = C.transpose();
+		Matrix CC = CT.times(C);
+		Matrix invCC = CC.inverse();
+		
+		Matrix CCC = invCC.times(CT);
+		Matrix Ainv = DDD.times(CCC);
+		
+		return Ainv;
+	}
+	public Matrix getTrain_set() {
+		return train_set;
+	}
+	public void setTrain_set(Matrix train_set) {
+		this.train_set = train_set;
+	}
+	public int getTrain_data_Count() {
+		return train_data_Count;
+	}
+	public void setTrain_data_Count(int train_data_Count) {
+		this.train_data_Count = train_data_Count;
+	}
+	public Matrix getP() {
+		return P;
+	}
+	public void setP(Matrix p) {
+		P = p;
+	}
+	public Matrix getT() {
+		return T;
+	}
+	public void setT(Matrix t) {
+		T = t;
+	}
+	public Matrix getInputWeight() {
+		return InputWeight;
+	}
+	public void setInputWeight(Matrix inputWeight) {
+		InputWeight = inputWeight;
+	}
+	public float getTrainingTime() {
+		return TrainingTime;
+	}
+	public void setTrainingTime(float trainingTime) {
+		TrainingTime = trainingTime;
+	}
+	public float getTestingTime() {
+		return TestingTime;
+	}
+	public void setTestingTime(float testingTime) {
+		TestingTime = testingTime;
+	}
+	public double getTrainingAccuracy() {
+		return TrainingAccuracy;
+	}
+	public void setTrainingAccuracy(double trainingAccuracy) {
+		TrainingAccuracy = trainingAccuracy;
+	}
+	public int getNumberofHiddenNeurons() {
+		return NumberofHiddenNeurons;
+	}
+	public void setNumberofHiddenNeurons(int numberofHiddenNeurons) {
+		NumberofHiddenNeurons = numberofHiddenNeurons;
+	}
+	public int getNumberofOutputNeurons() {
+		return NumberofOutputNeurons;
+	}
+	public void setNumberofOutputNeurons(int numberofOutputNeurons) {
+		NumberofOutputNeurons = numberofOutputNeurons;
+	}
+	public int getNumberofInputNeurons() {
+		return NumberofInputNeurons;
+	}
+	public void setNumberofInputNeurons(int numberofInputNeurons) {
+		NumberofInputNeurons = numberofInputNeurons;
+	}
+	public int getTotalColCount() {
+		return totalColCount;
+	}
+	public void setTotalColCount(int totalColCount) {
+		this.totalColCount = totalColCount;
+	}
+	public String getFunc() {
+		return func;
+	}
+	public void setFunc(String func) {
+		this.func = func;
+	}
+	public Matrix getBiasofHiddenNeurons() {
+		return BiasofHiddenNeurons;
+	}
+	public void setBiasofHiddenNeurons(Matrix biasofHiddenNeurons) {
+		BiasofHiddenNeurons = biasofHiddenNeurons;
+	}
+	public Matrix getOutputWeight() {
+		return OutputWeight;
+	}
+	public void setOutputWeight(Matrix outputWeight) {
+		OutputWeight = outputWeight;
+	}
+	public double getTestingAccuracy() {
+		return TestingAccuracy;
+	}
+	public void setTestingAccuracy(double testingAccuracy) {
+		TestingAccuracy = testingAccuracy;
+	}
+	public int getTest_data_Count() {
+		return test_data_Count;
+	}
+	public void setTest_data_Count(int test_data_Count) {
+		this.test_data_Count = test_data_Count;
+	}
+	public Matrix getTest_set() {
+		return test_set;
+	}
+	public void setTest_set(Matrix test_set) {
+		this.test_set = test_set;
+	}
+	public Matrix getTestP() {
+		return testP;
+	}
+	public void setTestP(Matrix testP) {
+		this.testP = testP;
+	}
+	public Matrix getTestT() {
+		return testT;
+	}
+	public void setTestT(Matrix testT) {
+		this.testT = testT;
+	}
+}

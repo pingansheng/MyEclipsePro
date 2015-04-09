@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE validators PUBLIC 
+  		"-//Apache Struts//XWork Validator 1.0.2//EN"
+  		"http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+<validators>
+<!-- 字段校验器 我去校验谁 我用谁来校验 -->
+	<field name="username">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>用户名不可为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">4</param>
+			<param name="maxLength">10</param>
+			<message>用户名长度不符合要求，${minLength} 到 ${maxLength}之间</message>
+		</field-validator>
+	</field>
+	<field name="password">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>密码不可为空</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">4</param>
+			<param name="maxLength">10</param>
+			<message>密码长度不符合要求，${minLength} 到 ${maxLength}之间</message>
+		</field-validator>
+	</field>
+	<field name="repass">
+		<field-validator type="requiredstring" short-circuit="true">
+			<param name="trim">true</param>
+			<message>请再次输入密码</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">4</param>
+			<param name="maxLength">10</param>
+			<message>密码长度不符合要求，${minLength} 到 ${maxLength}之间</message>
+		</field-validator>
+	</field>
+	<field name="age">
+		<field-validator type="required" short-circuit="true">
+			<message>年龄不可为空</message>
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">1</param>
+			<param name="max">150</param>
+			<message>年龄不符合要求，${min} 到 ${max}之间</message>
+		</field-validator>
+	</field>
+	<field name="date">
+		<!-- required 表示除了String其他类型 -->
+		<field-validator type="required" short-circuit="true">
+			<param name="trim">true</param>
+			<message>日期不可为空</message>
+		</field-validator>
+		<field-validator type="date">
+			<param name="min">2001-01-01</param>
+			<param name="max">2020-12-31</param>
+			<message>日期要在${min}至${max}之间</message>
+		</field-validator>
+	</field>
+	
+	<!-- 非字段校验器 我用谁来校验 我去校验谁 (不建议同时使用两种校验方式) -->
+	<!--<validator type="requiredstring">
+		<param name="fieldName">username</param>
+		<message>用户名不可为空</message>
+	</validator>
+	
+	<validator type="stringlength">
+		<param name="fieldName">username</param>
+		<param name="minLength">4</param>
+		<param name="maxLength">8</param>
+		<message>${minLength}-${maxLength}</message>
+	</validator>-->
+</validators>

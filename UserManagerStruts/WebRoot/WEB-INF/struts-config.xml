@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    <form-bean name="userForm" type="com.pas.usermanager.struts.form.UserForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="userForm"
+      input="/WEB-INF/login.jsp"
+      name="userForm"
+      path="/login"
+      scope="request"
+      type="com.pas.usermanager.struts.action.LoginAction"
+      validate="false"
+      cancellable="true" >
+      
+      <forward name="loginerr" path="/WEB-INF/login.jsp" />
+      <forward name="loginOK" path="/route.do" />
+      
+    </action>
+    <action
+      path="/route"
+      type="com.pas.usermanager.struts.action.RouteAction"
+      validate="false"
+      cancellable="true">
+      
+      <forward name="adduser" path="/WEB-INF/AddUser.jsp" />
+      <forward name="/" path="/WEB-INF/login.jsp" />
+      <forward name="main" path="/WEB-INF/mainFrame.jsp" />
+      
+      <forward name="manageuser" path="/userCTL.do" />
+    </action>
+    <action
+      attribute="userForm"
+      input="/WEB-INF/UpdateUser.jsp"
+      name="userForm"
+      path="/userCTL"
+      scope="request"
+      type="com.pas.usermanager.struts.action.UserCTLAction"
+      validate="false"
+      cancellable="true" >
+      <forward name="err" path="/WEB-INF/err.jsp" />
+      <forward name="ok" path="/WEB-INF/ok.jsp" />
+      <forward name="showusers" path="/WEB-INF/ManageUsers.jsp" />
+      <forward name="updateuser" path="/WEB-INF/UpdateUser.jsp" />
+    </action>
+
+    
+
+
+
+
+  </action-mappings>
+
+  <message-resources parameter="com.pas.usermanager.struts.ApplicationResources" />
+</struts-config>
+

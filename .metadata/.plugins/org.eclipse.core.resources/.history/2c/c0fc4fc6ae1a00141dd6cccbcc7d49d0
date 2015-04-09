@@ -1,0 +1,12 @@
+package com.exception;
+
+public class ExceptionTest {
+	
+	static fun(){
+		throw new RuntimeException("´íÎó");
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

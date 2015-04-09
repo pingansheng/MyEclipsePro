@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ServletEncoding"
+  id="myeclipse.1379640346829"
+  context-root="/Encoding"
+  j2ee-spec="5.0"
+  archive="ServletEncoding.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

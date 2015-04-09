@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+<!-- 配置动态表单 -->
+<form-beans>
+<form-bean name="userForm" type="org.apache.struts.action.DynaActionForm">
+		<!-- 动态表单属性是配置出来的 -->
+		<form-property name="userid" type="java.lang.String"></form-property>
+		<form-property name="password" type="java.lang.String"></form-property>
+		<form-property name="email" type="java.lang.String"></form-property>
+	</form-bean></form-beans>
+	
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings >
+    <action
+      attribute="userForm"
+      input="/Register.jsp"
+      name="userForm"
+      parameter="type"
+      path="/register"
+      scope="request"
+      type="com.pas.web.struts.action.RegisterAction"
+      validate="false"
+      cancellable="true" >
+      <forward name="ok" path="/ok.jsp" />
+    </action>
+
+	</action-mappings>
+
+	<message-resources parameter="com.pas.web.struts.ApplicationResources" />
+</struts-config>
+

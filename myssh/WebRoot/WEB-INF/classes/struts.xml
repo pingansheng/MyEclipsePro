@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.objectFactory"
+		value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	<package name="struts2" extends="struts-default" namespace="/">
+		<global-results>
+			<result name="ok">/WEB-INF/ok.jsp</result>
+			<result name="err">/WEB-INF/err.jsp</result>
+		</global-results>
+
+		<!-- class为Spring beans.xml中的action bean id -->
+		<action name="login" class="loginAction">
+			<result name="input">/index.jsp</result>
+			<result name="login">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+			<result name="success">/WEB-INF/MainFrame.jsp</result>
+		</action>
+		<action name="employee" class="employeeAction">
+			<param name="flag">${flag}</param>
+			<result name="add">/WEB-INF/addemployee.jsp</result>
+			<result name="input">/WEB-INF/addemployee.jsp</result>
+			<result name="emplist">/WEB-INF/employees.jsp</result>
+				<result name="updateemp">/WEB-INF/addemployee.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

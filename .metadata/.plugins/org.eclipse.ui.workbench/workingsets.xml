@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1397649375357_3" label="Struts2" name="Struts2">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2Anotation" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2TypeChange" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2JasperReport" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2validate" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2XML_yibu" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2GetServletObject" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2Interceptor1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2ModelDriven" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2JSON" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2Dispatcher" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2GlobalTypeChange" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2First" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2JFreeChart" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2XMLvalidate_I18N" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2OGNL" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2Test" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2FileUpDownDMI" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2Interceptor" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2ITCPLogin" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Struts2JqueryPlugin" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1397649401332_4" label="Struts1" name="Struts1">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/UserManagerStruts" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsToolFull" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsLogin" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsFileUpDown" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsRegister" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsTool1" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsTag" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsDynamicForm" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/StrutsDispatchacher" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1397649430669_5" label="JavaWeb" name="JavaWeb">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ServletRequestPro" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ServletEncoding" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ServletSession" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/UserManager" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ServletFilter" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/cssProject" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TestJSF" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ServletHelloServlet" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ServletContext" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Servletcookie" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/JSPLearning" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ServletTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ServletRequestForward" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ServletNoCacheTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/JSP_JSTL" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1397649484212_6" label="Spring" name="Spring">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/bean工厂" type="4"/>
+<item elementID="=firstSpring" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Spring特殊bean" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=接口解耦" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/bean工厂中bean的生命周期" type="4"/>
+<item elementID="=bean上下文中生命周期" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=构造函数bean注入" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=自动装配" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=SpringAOP" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=bean装配" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1397649491251_7" label="Hibernate" name="Hibernate">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/多对多" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernateJ2SEFirstTest" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/一对一" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/一级缓存" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HQL详解" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernateTools" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/NoteBook" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/二级缓存" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/一对多多对一" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/HibernateJ2SEChangeDBTypeToMysql" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1397649619327_8" label="Project" name="Project">
+<item elementID="=myssh" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1397648860422_0" label="Window Working Set" name="Aggregate for window 1397648860420"/>
+</workingSetManager>

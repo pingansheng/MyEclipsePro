@@ -1,0 +1,62 @@
+package com.pas.test;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
+
+import com.pas.service.PersonService;
+
+public class Test {
+	public static void main(String[] args) {
+		/*
+		 * bean工厂中bean的生命周期：
+		 * 
+		 * -3、现在开始初始化容器
+		 * -2、构造BeanFactoryPostProcessor
+		 * -1、调用postProcessBeanFactory方法,整个容器调用一次(在容器实际实例化任何其它的bean之前读取配置元数据，并有可能修改它)
+		 * 0、 构造BeanPostProcessor
+		 * 1、构造InstantiationAwareBeanPostProcessorAdapter
+		 * 2、InstantiationAwareBeanPostProcessor调用postProcessBeforeInstantiation方法（每个bean调用一次）
+		 * 
+		 * 3、bean实例化（默认使用无参数的构造函数）
+		 * 	    可以重载一个无参数的构造方法
+		 *    如果需要使用有参的构造函数实例化，需要指定factory-method等参数
+		 * 4、InstantiationAwareBeanPostProcessor调用postProcessPropertyValues设置某个属性之前调用，（每个bean调用，所有属性设置前调用一次）
+		 * 5、设置属性（注入属性）
+		 * 		调用set方法设置属性
+		 * 6、如果实现bean名字关注BeanNameAware，调用BeanNameAware的setBeanName方法
+		 * 7、如果实现bean工厂关注BeanFactoryAware，调用其setBeanFactory可得到factory
+		 * 8、如果实现InitializingBean接口，则调用afterPropertiesSet
+		 * 9、如果配置了自定义的初始化方法，（init-method="myinit"）则执行
+		 * 10、执行postProcessAfterInitialization方法
+		 * 11、InstantiationAwareBeanPostProcessor调用postProcessAfterInitialization方法（bean初始化之后调用）（每个bean调用一次）
+		 * 12、使用我们的bean
+		 * 13、容器关闭
+		 * 14、可以通过实现DisposableBean 接口来调用方法 destory
+		 * 15、可以在<bean destory-method="mydes"/> 调用定制的销毁方法
+		 */
+		
+		System.out.println("现在开始初始化容器");
+		ApplicationContext  fc=new ClassPathXmlApplicationContext("applicationContext.xml");
+		out("容器初始化完成,hashCode():"+fc.hashCode());
+		try {
+			PersonService ps=(PersonService) fc.getBean("personService");
+			ps.sayHi();
+			
+			out("开始关闭容器……");
+			((ClassPathXmlApplicationContext)fc).registerShutdownHook();
+			out("完成关闭容器……");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void out(Object s)
+	{
+		System.out.println(s);
+	}
+}

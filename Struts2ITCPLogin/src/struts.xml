@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="struts2" extends="struts-default" namespace="/">
+
+
+		<interceptors>
+			<interceptor name="auth" class="com.pas.interceptor.AnthITCP"></interceptor>
+
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="auth"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<global-results>
+			<result name="login" type="redirect">/loginTag.jsp</result>
+		</global-results>
+		
+		<action name="login" class="com.pas.action.LoginAction">
+			<result name="success">/reg.jsp</result>
+			<result name="input">/loginTag.jsp</result>
+		</action>
+
+		<action name="reg" class="com.pas.action.RegisterAction">
+			<result name="success">/ok.jsp</result>
+			<result name="input">/reg.jsp</result>
+			<interceptor-ref name="myStack"></interceptor-ref>
+		</action>
+
+
+	</package>
+
+</struts>

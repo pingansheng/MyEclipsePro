@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<!-- 设置编码方式解决乱码问题 相当于 setEncodingCharacter -->
+	<constant name="struts.i18n.encoding" value="gbk"></constant>
+	<!-- 开启DMI  -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+		<!-- 定义自己的国际化资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+	<package name="struts2" extends="struts-default">
+		<action name="Upload" class="com.pas.action.SUpLoad">
+			<result name="success">/upload/SUpLoad.jsp</result>
+			<result name="input">/upload/SUpLoad.jsp</result>
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1024</param>
+				<param name="allowedTypes">
+					image/jpeg,text/plain
+				</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+		
+		<action name="download" class="com.pas.action.DownLoad">
+		<result name="success">/upload/SUpLoad.jsp</result>
+			<result type="stream">
+				<param name="contentType">text/plain</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<!-- 获取文件流的方法名getxxx -->
+				<param name="inputName">file</param>
+			</result>
+		</action>
+	</package>
+</struts>

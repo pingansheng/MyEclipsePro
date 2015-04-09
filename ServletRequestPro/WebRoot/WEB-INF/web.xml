@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetInfoRequest</servlet-name>
+    <servlet-class>com.pas.request.GetInfoRequest</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetRequestHeader</servlet-name>
+    <servlet-class>com.pas.request.GetRequestHeader</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MyForm</servlet-name>
+    <servlet-class>com.pas.request.MyFrom</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.pas.request.Register</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RequestForward</servlet-name>
+    <servlet-class>com.pas.request.RequestForward</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetInfoRequest</servlet-name>
+    <url-pattern>/GetInfoRequest</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetRequestHeader</servlet-name>
+    <url-pattern>/GetRequestHeader</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MyForm</servlet-name>
+    <url-pattern>/MyForm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestForward</servlet-name>
+    <url-pattern>/RequestForward</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  <login-config>
+    <auth-method>BASIC</auth-method>
+  </login-config>
+</web-app>

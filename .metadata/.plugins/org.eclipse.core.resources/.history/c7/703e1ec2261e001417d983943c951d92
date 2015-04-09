@@ -1,0 +1,7 @@
+package com.pas.ELM.jblas;
+
+public class JblasTest {
+	public static void main(String[] args) {
+		
+	}
+}

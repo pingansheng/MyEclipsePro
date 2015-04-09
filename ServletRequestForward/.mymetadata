@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ServletRequestForward"
+  id="myeclipse.1379763936538"
+  context-root="/RequestForward"
+  j2ee-spec="5.0"
+  archive="ServletRequestForward.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

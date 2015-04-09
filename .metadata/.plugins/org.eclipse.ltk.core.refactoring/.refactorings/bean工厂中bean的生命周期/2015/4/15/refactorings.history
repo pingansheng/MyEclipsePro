@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 2 elements from project &apos;bean工厂中bean的生命周期&apos;&#x0D;&#x0A;- Original project: &apos;bean工厂中bean的生命周期&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     commons-logging.jar&#x0D;&#x0A;     spring.jar" description="Delete elements" element1="lib/commons-logging.jar" element2="lib/spring.jar" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="2" stamp="1428483418909" subPackages="false" version="1.0"/>
+</session>
