@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="31" version="2.0">
+<workbench progressCount="14" version="2.0">
 <workbenchAdvisor/>
 <window height="730" maximized="true" width="683" x="683" y="0">
 <fastViewData fastViewLocation="1024">
@@ -47,6 +47,7 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="206" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="com.genuitec.eclipse.hibernate.editors.HibernateConfigXMLEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.jboss.tools.common.propertieseditor.PropertiesCompoundEditor" itemType="typePlaceholder" x="38" y="22"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditorNoSource" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
@@ -95,10 +96,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings"/>
-<category IMemento.internal.id="Warnings (100 of 205 items)"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="105" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="626"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -158,7 +155,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
+<perspectives activePart="org.eclipse.jdt.ui.PackageExplorer" activePerspective="com.genuitec.myeclipse.perspective.myeclipseperspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.genuitec.myeclipse.perspective.MyEclipsePerspectiveFactory" id="com.genuitec.myeclipse.perspective.myeclipseperspective" label="MyEclipse Java Enterprise"/>
 <alwaysOnActionSet id="com.genuitec.myeclipse.actions.deploytools"/>
@@ -250,13 +247,13 @@
 <perspective_action id="com.genuitec.eclipse.uml.umlPerspective"/>
 <perspective_action id="com.genuitec.eclipse.web20.perspective"/>
 <hide_toolbar_item_id id="org.eclipse.search.OpenSearchDialogPage"/>
-<hide_toolbar_item_id id="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar"/>
 <hide_toolbar_item_id id="com.genuitec.eclipse.ws.xfire.launchwebex"/>
+<hide_toolbar_item_id id="org.eclipse.ui.externaltools.ExternalToolMenuDelegateToolbar"/>
 <hide_toolbar_item_id id="com.genuitec.eclipse.ws.xfire.actions"/>
 <hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.DebugDropDownAction"/>
-<hide_toolbar_item_id id="com.genuitec.myeclipse.actions.screencapture"/>
-<hide_toolbar_item_id id="com.genuitec.eclipse.j2eedt.core.ejb"/>
 <hide_toolbar_item_id id="org.eclipse.jdt.ui.navigate.open.type"/>
+<hide_toolbar_item_id id="com.genuitec.eclipse.j2eedt.core.ejb"/>
+<hide_toolbar_item_id id="com.genuitec.myeclipse.actions.screencapture"/>
 <hide_toolbar_item_id id="com.genuitec.eclipse.j2eedt.core.ejb3beanaction"/>
 <hide_toolbar_item_id id="com.genuitec.myeclipse.actions.desktop.explorefile"/>
 <hide_toolbar_item_id id="com.genuitec.eclipse.uml2.newumlmodelaction"/>
@@ -274,29 +271,25 @@
 <hide_toolbar_item_id id="org.eclipse.wst.jsdt.ui.navigate.open.type"/>
 <hide_toolbar_item_id id="org.eclipse.search.searchActionSet"/>
 <hide_toolbar_item_id id="com.genuitec.eclipse.ajax.action.openbrowser"/>
-<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.springframework.ide.eclipse.beans.ui.commands.openBean"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="com.genuitec.myeclipse.actions.desktop"/>
 <hide_toolbar_item_id id="org.eclipse.wst.xml.ui.design.DesignToolBar"/>
 <hide_toolbar_item_id id="com.genuitec.eclipse.uml.actions"/>
 <hide_toolbar_item_id id="com.genuitec.eclipse.screencapture.actions.capturetoolbar"/>
 <hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.ProfileDropDownAction"/>
 <hide_toolbar_item_id id="org.eclipse.debug.internal.ui.actions.RunDropDownAction"/>
+<view id="org.eclipse.jdt.ui.PackageExplorer"/>
 <fastViewBars>
-<fastViewBar fastViewLocation="16384" id="topleft" orientation="512" selectedTabId="org.eclipse.jdt.ui.PackageExplorer" style="0">
-<fastViews>
-<view id="org.eclipse.jdt.ui.PackageExplorer" ratio="0.29984662"/>
-</fastViews>
-</fastViewBar>
 <fastViewBar fastViewLocation="1024" id="bottom" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="0">
 <fastViews>
 <view id="org.eclipse.ui.views.ProblemView" ratio="0.299509"/>
 <view id="com.genuitec.eclipse.ast.deploy.core.serverview" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
-<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@7ad7aaf9" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
+<fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@7a57a326" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="0">
 <fastViews>
-<view id="org.eclipse.ui.views.ContentOutline" ratio="0.29977462"/>
+<view id="org.eclipse.ui.console.ConsoleView" ratio="0.30278233"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@43657ce3" orientation="512" selectedTabId="com.genuitec.eclipse.migration.ui.projectView" style="0">
@@ -304,9 +297,9 @@
 <view id="com.genuitec.eclipse.migration.ui.projectView" ratio="0.3"/>
 </fastViews>
 </fastViewBar>
-<fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@7a57a326" orientation="256" selectedTabId="org.eclipse.ui.console.ConsoleView" style="0">
+<fastViewBar fastViewLocation="131072" id="org.eclipse.ui.internal.ViewStack@7ad7aaf9" orientation="512" selectedTabId="org.eclipse.ui.views.ContentOutline" style="0">
 <fastViews>
-<view id="org.eclipse.ui.console.ConsoleView" ratio="0.30278233"/>
+<view id="org.eclipse.ui.views.ContentOutline" ratio="0.29977462"/>
 </fastViews>
 </fastViewBar>
 <fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@225c25d9" orientation="256" selectedTabId="org.eclipse.ui.views.ProgressView" style="0">
@@ -372,11 +365,13 @@
 </folder>
 </info>
 <info folder="true" part="topleft" ratio="0.39933443" ratioLeft="240" ratioRight="361" relationship="4" relative="cvslocation">
-<folder appearance="2" expanded="0">
-<page content="org.eclipse.jdt.ui.PackageExplorer" label="LabelNotFound"/>
+<folder activePageID="org.eclipse.jdt.ui.PackageExplorer" appearance="2" expanded="2">
+<page content="org.eclipse.jdt.ui.PackageExplorer" label="Package Explorer"/>
 <page content="org.eclipse.jdt.ui.TypeHierarchy" label="LabelNotFound"/>
 <page content="org.eclipse.ui.views.ResourceNavigator" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="bottomleft" ratio="0.54908484" ratioLeft="330" ratioRight="271" relationship="4" relative="topleft">
@@ -715,9 +710,6 @@
 <workbenchWindowAdvisor/>
 <actionBarAdvisor/>
 <trimLayout>
-<trimArea IMemento.internal.id="16384">
-<trimItem IMemento.internal.id="topleft"/>
-</trimArea>
 <trimArea IMemento.internal.id="131072">
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@7ad7aaf9"/>
 <trimItem IMemento.internal.id="org.eclipse.ui.internal.ViewStack@43657ce3"/>
@@ -737,50 +729,50 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="DisposableBean.class" tooltip="org.springframework.beans.factory.DisposableBean">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=bean工厂中bean的生命周期/E:\/framework\/springframework3.2.5Core\/spring-beans-3.2.5.RELEASE.jar&lt;org.springframework.beans.factory(DisposableBean.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="BeforeAdvice.java" tooltip="SpringAOP/src/com/pas/notify/BeforeAdvice.java">
+<persistable path="/SpringAOP/src/com/pas/notify/BeforeAdvice.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="InstantiationAwareBeanPostProcessor.class" tooltip="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=bean工厂中bean的生命周期/E:\/framework\/springframework3.2.5Core\/spring-beans-3.2.5.RELEASE.jar&lt;org.springframework.beans.factory.config(InstantiationAwareBeanPostProcessor.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AfterAdvice.java" tooltip="SpringAOP/src/com/pas/notify/AfterAdvice.java">
+<persistable path="/SpringAOP/src/com/pas/notify/AfterAdvice.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="SmartInstantiationAwareBeanPostProcessor.class" tooltip="org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostProcessor">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=bean工厂中bean的生命周期/E:\/framework\/springframework3.2.5Core\/spring-beans-3.2.5.RELEASE.jar&lt;org.springframework.beans.factory.config(SmartInstantiationAwareBeanPostProcessor.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AroundAdvice.java" tooltip="SpringAOP/src/com/pas/notify/AroundAdvice.java">
+<persistable path="/SpringAOP/src/com/pas/notify/AroundAdvice.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="BeanPostProcessor.class" tooltip="org.springframework.beans.factory.config.BeanPostProcessor">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=bean工厂中bean的生命周期/E:\/framework\/springframework3.2.5Core\/spring-beans-3.2.5.RELEASE.jar&lt;org.springframework.beans.factory.config(BeanPostProcessor.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestService1.java" tooltip="SpringAOP/src/com/pas/service/TestService1.java">
+<persistable path="/SpringAOP/src/com/pas/service/TestService1.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditorNoSource" name="InstantiationAwareBeanPostProcessorAdapter.class" tooltip="org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessorAdapter">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=bean工厂中bean的生命周期/E:\/framework\/springframework3.2.5Core\/spring-beans-3.2.5.RELEASE.jar&lt;org.springframework.beans.factory.config(InstantiationAwareBeanPostProcessorAdapter.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.springframework.springconfigeditor" name="applicationContext.xml" tooltip="SpringAOP/src/applicationContext.xml">
+<persistable path="/SpringAOP/src/applicationContext.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyInstantiationAwareBeanPostProcessor.java" tooltip="bean工厂中bean的生命周期/src/com/pas/service/MyInstantiationAwareBeanPostProcessor.java">
-<persistable path="/bean工厂中bean的生命周期/src/com/pas/service/MyInstantiationAwareBeanPostProcessor.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test.java" tooltip="SpringAOP/src/com/pas/test/Test.java">
+<persistable path="/SpringAOP/src/com/pas/test/Test.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditorNoSource" name="ApplicationContext.class" tooltip="org.springframework.context.ApplicationContext">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=bean工厂中bean的生命周期/lib\/spring.jar&lt;org.springframework.context(ApplicationContext.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ThrowsAdvice.java" tooltip="SpringAOP/src/com/pas/notify/ThrowsAdvice.java">
+<persistable path="/SpringAOP/src/com/pas/notify/ThrowsAdvice.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyBeanFactoryPostProcess.java" tooltip="bean工厂中bean的生命周期/src/com/pas/service/MyBeanFactoryPostProcess.java">
-<persistable path="/bean工厂中bean的生命周期/src/com/pas/service/MyBeanFactoryPostProcess.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestServiceInter2.java" tooltip="SpringAOP/src/com/pas/inter/TestServiceInter2.java">
+<persistable path="/SpringAOP/src/com/pas/inter/TestServiceInter2.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditorNoSource" name="BeanFactory.class" tooltip="org.springframework.beans.factory.BeanFactory">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=bean工厂中bean的生命周期/lib\/spring.jar&lt;org.springframework.beans.factory(BeanFactory.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="TestServiceInter.java" tooltip="SpringAOP/src/com/pas/inter/TestServiceInter.java">
+<persistable path="/SpringAOP/src/com/pas/inter/TestServiceInter.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyBeanPostProcessor.java" tooltip="bean工厂中bean的生命周期/src/com/pas/service/MyBeanPostProcessor.java">
-<persistable path="/bean工厂中bean的生命周期/src/com/pas/service/MyBeanPostProcessor.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ApplicationContextUtil.java" tooltip="接口解耦/src/com/pas/util/ApplicationContextUtil.java">
+<persistable path="/接口解耦/src/com/pas/util/ApplicationContextUtil.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PersonService.java" tooltip="bean工厂中bean的生命周期/src/com/pas/service/PersonService.java">
-<persistable path="/bean工厂中bean的生命周期/src/com/pas/service/PersonService.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test.java" tooltip="接口解耦/src/com/pas/test/Test.java">
+<persistable path="/接口解耦/src/com/pas/test/Test.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Test.java" tooltip="bean工厂中bean的生命周期/src/com/pas/test/Test.java">
-<persistable path="/bean工厂中bean的生命周期/src/com/pas/test/Test.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.springframework.springconfigeditor" name="beans.xml" tooltip="接口解耦/src/com/pas/service/beans.xml">
+<persistable path="/接口解耦/src/com/pas/service/beans.xml"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.genuitec.eclipse.springframework.springconfigeditor" name="applicationContext.xml" tooltip="bean工厂中bean的生命周期/src/applicationContext.xml">
-<persistable path="/bean工厂中bean的生命周期/src/applicationContext.xml"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="UpLetter.java" tooltip="接口解耦/src/com/pas/service/UpLetter.java">
+<persistable path="/接口解耦/src/com/pas/service/UpLetter.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="BeanFactory.class" tooltip="org.springframework.beans.factory.BeanFactory">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=bean工厂/lib\/spring-beans-3.2.5.RELEASE.jar&lt;org.springframework.beans.factory(BeanFactory.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LowLetter.java" tooltip="接口解耦/src/com/pas/service/LowLetter.java">
+<persistable path="/接口解耦/src/com/pas/service/LowLetter.java"/>
 </file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="DefaultListableBeanFactory.class" tooltip="org.springframework.beans.factory.support.DefaultListableBeanFactory">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=bean工厂/lib\/spring-beans-3.2.5.RELEASE.jar&lt;org.springframework.beans.factory.support(DefaultListableBeanFactory.class"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ChangLetter.java" tooltip="接口解耦/src/com/inter/ChangLetter.java">
+<persistable path="/接口解耦/src/com/inter/ChangLetter.java"/>
 </file>
 </mruList>
 </workbench>

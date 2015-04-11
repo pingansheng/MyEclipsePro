@@ -8,6 +8,6 @@
 	<!--<bean id="changeLetter" class="com.pas.service.UpLetter">
 		<property name="str" value="abcdefg" />
 	</bean> -->
-	 <bean id="changeLetter" class="com.pas.service.LowLetter"> <property 
+	 <bean id="changeLetter" class="com.pas.service.UpLetter"> <property 
 		name="str" value="ABCDEFG" /> </bean>
 </beans>

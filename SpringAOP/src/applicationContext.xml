@@ -38,6 +38,7 @@
 			</list>
 		</property>
 	</bean>
+	
 	<!-- 代理对象 -->
 	<bean id="myproxy" class="org.springframework.aop.framework.ProxyFactoryBean">
 		
